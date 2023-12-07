@@ -24,8 +24,23 @@ public class ProductController {
         return warehouseService.getAllProducts();
     }
 
+    @GetMapping("/getProduct/{id}")
+    public Product getProduct(@PathVariable Long id){
+        return warehouseService.getProduct(id);
+    }
+
     @PostMapping("/createProduct")
     public void createProduct(@RequestBody Product product){
         warehouseService.save(product);
+    }
+
+    @PutMapping("/updateProduct/{id}")
+    public void updateProduct(@RequestBody Product product, @PathVariable Long id){
+        warehouseService.updateProduct(product, id);
+    }
+
+    @DeleteMapping("/deleteProduct/{id}")
+    public void deleteProduct(@PathVariable Long id){
+        warehouseService.deleteProduct(id);
     }
 }
