@@ -1,9 +1,6 @@
 package com.example.warehousemanagementsystem.Warehouse.Product;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.Param;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -42,5 +39,11 @@ public class ProductController {
     @DeleteMapping("/deleteProduct/{id}")
     public void deleteProduct(@PathVariable Long id){
         warehouseService.deleteProduct(id);
+    }
+
+    @GetMapping("/sort")
+    public List<Product> sortByPrice(@RequestParam(value = "sort", required = false) String sort){
+       List<Product> products = warehouseService.getAllProducts();
+       return warehouseService.sortByPrice(sort, products);
     }
 }
