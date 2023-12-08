@@ -25,7 +25,7 @@ public class ProductService {
 
     @Transactional
     public void updateProduct(Product updatedProduct, Long id) {
-        Product existingProduct = productRepository.findById(id);
+        Product existingProduct = this.getProduct(id);
         existingProduct.setName(updatedProduct.getName());
         existingProduct.setCategoryId(updatedProduct.getCategoryId());
         existingProduct.setPrice(updatedProduct.getPrice());
@@ -38,7 +38,9 @@ public class ProductService {
     }
 
     public Product getProduct(Long id) {
-        return productRepository.findById(id);
+        List<Product> products = this.getAllProducts();
+        Product product = BinarySearch.binarySearch(products, id);
+        return product;
     }
 
     public List<Product> sortByPrice(String sort, List<Product> products) {
