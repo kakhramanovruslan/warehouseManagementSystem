@@ -1,4 +1,4 @@
-package com.example.warehousemanagementsystem.Warehouse.Product;
+package com.example.warehousemanagementsystem.WarehouseSystem.Product;
 
 import java.util.List;
 

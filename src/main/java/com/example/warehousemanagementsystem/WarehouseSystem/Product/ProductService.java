@@ -1,7 +1,6 @@
-package com.example.warehousemanagementsystem.Warehouse.Product;
+package com.example.warehousemanagementsystem.WarehouseSystem.Product;
 
 import jakarta.transaction.Transactional;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Collections;
@@ -10,8 +9,11 @@ import java.util.List;
 @Service
 public class ProductService {
 
-    @Autowired
-    private ProductRepository productRepository;
+    private final ProductRepository productRepository;
+
+    public ProductService(ProductRepository productRepository) {
+        this.productRepository = productRepository;
+    }
 
     @Transactional
     public List<Product> getAllProducts() {

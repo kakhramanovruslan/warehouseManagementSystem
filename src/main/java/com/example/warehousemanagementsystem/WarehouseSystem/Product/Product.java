@@ -1,8 +1,9 @@
-package com.example.warehousemanagementsystem.Warehouse.Product;
+package com.example.warehousemanagementsystem.WarehouseSystem.Product;
 
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "Product")
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

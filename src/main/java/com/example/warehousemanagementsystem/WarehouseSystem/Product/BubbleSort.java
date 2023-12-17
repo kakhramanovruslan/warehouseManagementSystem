@@ -1,4 +1,4 @@
-package com.example.warehousemanagementsystem.Warehouse.Product;
+package com.example.warehousemanagementsystem.WarehouseSystem.Product;
 
 import java.util.List;
 
@@ -10,8 +10,7 @@ public class BubbleSort {
         for (int i = 0; i < n; i++) {
             for (int j = 1; j < (n - i); j++) {
                 if (products.get(j - 1).getPrice() > products.get(j).getPrice()) {
-                    // swap products
-                    temp = products.get(j - 1);
+                    temp = products.get(j - 1);                     // swap products
                     products.set(j - 1, products.get(j));
                     products.set(j, temp);
                 }

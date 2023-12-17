@@ -1,4 +1,4 @@
-package com.example.warehousemanagementsystem.Warehouse.Product;
+package com.example.warehousemanagementsystem.WarehouseSystem.Product;
 
 
 import org.springframework.web.bind.annotation.*;
@@ -10,40 +10,40 @@ import java.util.List;
 public class ProductController {
 
     final
-    ProductService warehouseService;
+    ProductService productService;
 
     public ProductController(ProductService warehouseService) {
-        this.warehouseService = warehouseService;
+        this.productService = warehouseService;
     }
 
     @GetMapping("/getAllProducts")
     public List<Product> getAllProducts(){
-        return warehouseService.getAllProducts();
+        return productService.getAllProducts();
     }
 
     @GetMapping("/getProduct/{id}")
     public Product getProduct(@PathVariable Long id){
-        return warehouseService.getProduct(id);
+        return productService.getProduct(id);
     }
 
     @PostMapping("/createProduct")
     public void createProduct(@RequestBody Product product){
-        warehouseService.save(product);
+        productService.save(product);
     }
 
     @PutMapping("/updateProduct/{id}")
     public void updateProduct(@RequestBody Product product, @PathVariable Long id){
-        warehouseService.updateProduct(product, id);
+        productService.updateProduct(product, id);
     }
 
     @DeleteMapping("/deleteProduct/{id}")
     public void deleteProduct(@PathVariable Long id){
-        warehouseService.deleteProduct(id);
+        productService.deleteProduct(id);
     }
 
     @GetMapping("/sort")
     public List<Product> sortByPrice(@RequestParam(value = "sort", required = false) String sort){
-       List<Product> products = warehouseService.getAllProducts();
-       return warehouseService.sortByPrice(sort, products);
+       List<Product> products = productService.getAllProducts();
+       return productService.sortByPrice(sort, products);
     }
 }
