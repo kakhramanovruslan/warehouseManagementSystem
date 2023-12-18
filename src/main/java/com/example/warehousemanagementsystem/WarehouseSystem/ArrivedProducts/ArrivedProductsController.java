@@ -22,4 +22,9 @@ public class ArrivedProductsController {
         arrivedProductsService.save(arrivedProducts);
     }
 
+    @GetMapping("")
+    public List<ArrivedProductsDTOInterface> getArrivedProducts(){
+       return arrivedProductsService.getArrivedProducts();
+    }
+
 }

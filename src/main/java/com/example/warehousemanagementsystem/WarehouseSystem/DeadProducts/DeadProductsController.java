@@ -1,10 +1,10 @@
 package com.example.warehousemanagementsystem.WarehouseSystem.DeadProducts;
 
 
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.example.warehousemanagementsystem.WarehouseSystem.ArrivedProducts.ArrivedProductsDTOInterface;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/deadProducts")
@@ -20,5 +20,11 @@ public class DeadProductsController {
     public void deadProducts(@RequestBody DeadProducts deadProducts){
         deadProductsService.save(deadProducts);
     }
+
+    @GetMapping("")
+    public List<DeadProductsDTOInterface> getDeadProducts(){
+        return deadProductsService.getDeadProducts();
+    }
+
 
 }
