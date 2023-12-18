@@ -4,6 +4,7 @@ package com.example.warehousemanagementsystem.WarehouseSystem.warehouse;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class WarehouseService {
@@ -14,7 +15,7 @@ public class WarehouseService {
         this.warehouseRepository = warehouseRepository;
     }
 
-    public List<Object[]> getWarehouseData() {
+    public List<WarehouseDTOInterface> getWarehouseData() {
         return warehouseRepository.findWarehouseData();
     }
 }
