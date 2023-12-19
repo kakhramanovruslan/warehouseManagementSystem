@@ -1,12 +1,12 @@
 package com.example.warehousemanagementsystem.WarehouseSystem.DeadProducts;
 
 
-import com.example.warehousemanagementsystem.WarehouseSystem.ArrivedProducts.ArrivedProductsDTOInterface;
+import com.example.warehousemanagementsystem.WarehouseSystem.Analytics.ProductsDTOInterface;
 
 import java.util.Date;
 
 
-public class DeadProductsDTO implements DeadProductsDTOInterface {
+public class DeadProductsDTO implements ProductsDTOInterface {
 
     private Long id;
 
@@ -14,7 +14,7 @@ public class DeadProductsDTO implements DeadProductsDTOInterface {
 
     private String name;
 
-    private Date deadDate;
+    private Date date;
 
     private int price;
 
@@ -36,8 +36,8 @@ public class DeadProductsDTO implements DeadProductsDTOInterface {
     }
 
     @Override
-    public Date getDeadDate() {
-        return deadDate;
+    public Date getDate() {
+        return date;
     }
 
     @Override

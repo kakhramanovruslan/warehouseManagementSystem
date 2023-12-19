@@ -1,8 +1,10 @@
 package com.example.warehousemanagementsystem.WarehouseSystem.Analytics;
 
 
+import com.example.warehousemanagementsystem.WarehouseSystem.ArrivedProducts.ArrivedProducts;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.Map;
 
 @RestController
@@ -17,12 +19,12 @@ public class AnalyticsController {
     }
 
     @GetMapping("amountArrive")
-    public Map<String, StatisticsDTO> getAmountArrivedProducts(){
+    public StatisticsDTO getAmountArrivedProducts(){
         return analyticsService.getAmountArrivedProducts();
     }
 
     @GetMapping("amountDead")
-    public Map<String, StatisticsDTO> getAmountDeadProducts(){
+    public StatisticsDTO getAmountDeadProducts(){
         return analyticsService.getAmountDeadProducts();
     }
 

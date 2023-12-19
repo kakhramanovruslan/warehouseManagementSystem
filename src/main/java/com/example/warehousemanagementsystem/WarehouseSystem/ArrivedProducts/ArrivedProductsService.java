@@ -1,5 +1,7 @@
 package com.example.warehousemanagementsystem.WarehouseSystem.ArrivedProducts;
 
+import com.example.warehousemanagementsystem.WarehouseSystem.Analytics.ProductsDTOInterface;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,7 +20,7 @@ public class ArrivedProductsService {
         arrivedProductsRepository.save(arrivedProducts);
     }
 
-    public List<ArrivedProductsDTOInterface> getArrivedProducts() {
+    public List<ProductsDTOInterface> getArrivedProducts() {
         return arrivedProductsRepository.findAllWithPrice();
     }
 }

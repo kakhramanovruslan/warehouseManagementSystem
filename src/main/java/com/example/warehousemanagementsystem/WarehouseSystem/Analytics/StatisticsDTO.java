@@ -7,4 +7,9 @@ public class StatisticsDTO  {
     public int getAmountProducts() {
         return amountProducts;
     }
+
+    public void setAmountProducts(int amountProducts) {
+        this.amountProducts = amountProducts;
+    }
+
 }

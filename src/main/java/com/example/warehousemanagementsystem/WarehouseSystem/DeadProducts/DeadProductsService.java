@@ -1,5 +1,6 @@
 package com.example.warehousemanagementsystem.WarehouseSystem.DeadProducts;
 
+import com.example.warehousemanagementsystem.WarehouseSystem.Analytics.ProductsDTOInterface;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,7 +19,7 @@ public class DeadProductsService {
         deadProductsRepository.save(deadProducts);
     }
 
-    public List<DeadProductsDTOInterface> getDeadProducts() {
+    public List<ProductsDTOInterface> getDeadProducts() {
         return deadProductsRepository.findAllWithPrice();
     }
 }

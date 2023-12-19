@@ -1,8 +1,7 @@
 package com.example.warehousemanagementsystem.WarehouseSystem.ArrivedProducts;
 
 
-import com.example.warehousemanagementsystem.WarehouseSystem.Product.Product;
-import com.example.warehousemanagementsystem.WarehouseSystem.Product.ProductService;
+import com.example.warehousemanagementsystem.WarehouseSystem.Analytics.ProductsDTOInterface;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -23,7 +22,7 @@ public class ArrivedProductsController {
     }
 
     @GetMapping("")
-    public List<ArrivedProductsDTOInterface> getArrivedProducts(){
+    public List<ProductsDTOInterface> getArrivedProducts(){
        return arrivedProductsService.getArrivedProducts();
     }
 
